@@ -1,7 +1,7 @@
 package com.lykourgoss.blockchainapi;
 
-import com.lykourgoss.blockchainapi.miners.SingleThreadMiner;
 import com.google.gson.GsonBuilder;
+import com.lykourgoss.blockchainapi.miners.Miner;
 import com.lykourgoss.blockchainapi.validators.Validator;
 import lombok.Getter;
 
@@ -11,12 +11,12 @@ import java.util.List;
 @Getter
 public class Blockchain<T extends Blockable> {
 
-    private final SingleThreadMiner miner;
+    private final Miner miner;
 
     private final List<Block<T>> blocks;
 
-    public Blockchain() {
-        this.miner = new SingleThreadMiner();
+    public Blockchain(Miner miner) {
+        this.miner = miner;
         this.blocks = new ArrayList<>();
     }
 
