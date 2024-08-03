@@ -1,6 +1,7 @@
 package com.lykourgoss.blockchainapi;
 
 import com.lykourgoss.blockchainapi.miners.SingleThreadMiner;
+import com.lykourgoss.blockchainapi.validators.Validator;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ public class Blockchain<T extends Blockable> {
     }
 
     private boolean validate(){
-        return false;
+        return Validator.INSTANCE.validate(this);
     }
 
     private void addBlock(Block<T> block){
