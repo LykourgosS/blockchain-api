@@ -1,7 +1,10 @@
 package com.lykourgoss.blockchainapi;
 
+import com.google.gson.Gson;
+import com.lykourgoss.blockchainapi.hashers.SHA256Hasher;
 import com.lykourgoss.blockchainapi.helpers.stringifier.Exclude;
 import com.lykourgoss.blockchainapi.helpers.stringifier.Stringifier;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,5 +30,9 @@ public class Block<T extends Blockable> {
 
     public String stringify(){
         return Stringifier.toString(this);
+    }
+
+    public String calculateHash(){
+        return new SHA256Hasher().hash(stringify());
     }
 }
