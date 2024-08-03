@@ -12,14 +12,20 @@ public enum Validator {
         this.validPrefix = "0".repeat(zeros);
     }
 
-    public Boolean validate(String hash){
+    public Boolean validate(String hash) {
         return hash.startsWith(validPrefix);
     }
 
-    public <T extends Blockable> Boolean validate(Block<T> current, Block<T> previous){
-        if (!current.getHash().equals(current.calculateHash()))
+    public <T extends Blockable> Boolean validate(Block<T> block) {
+        if (!validate(block.getHash()))
             return false;
-        if (!validate(current.getHash()))
+        if (!block.getHash().equals(block.calculateHash()))
+            return false;
+        return true;
+    }
+
+    public <T extends Blockable> Boolean validate(Block<T> current, Block<T> previous) {
+        if (!validate(current))
             return false;
         if (!current.getHash().equals(previous.getHash()))
             return false;
