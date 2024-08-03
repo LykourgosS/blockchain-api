@@ -1,6 +1,6 @@
 package com.lykourgoss.blockchainapi;
 
-import com.google.gson.GsonBuilder;
+import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
 import com.lykourgoss.blockchainapi.miners.Miner;
 import com.lykourgoss.blockchainapi.validators.Validator;
 import lombok.Getter;
@@ -36,6 +36,6 @@ public class Blockchain<T extends Blockable> {
     }
 
     public String toJson(){
-        return new GsonBuilder().setPrettyPrinting().create().toJson(this);
+        return GsonJsonizer.INSTANCE.toJson(getBlocks());
     }
 }

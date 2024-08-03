@@ -2,6 +2,7 @@ package com.lykourgoss.example;
 
 import com.google.gson.Gson;
 import com.lykourgoss.blockchainapi.Blockable;
+import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -60,6 +61,6 @@ public class Product implements Blockable {
 
     @Override
     public String getBlockData() {
-        return new Gson().toJson(this);
+        return GsonJsonizer.INSTANCE.toJson(this);
     }
 }
