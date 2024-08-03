@@ -15,9 +15,10 @@ public class Blockchain<T extends Blockable> {
 
     private final List<Block<T>> blocks;
 
-    public Blockchain(Miner miner) {
+    public Blockchain(Miner miner, int zeros) {
         this.miner = miner;
         this.blocks = new ArrayList<>();
+        Validator.INSTANCE.initialize(zeros);
     }
 
     private boolean validate(){

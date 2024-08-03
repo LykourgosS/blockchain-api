@@ -9,7 +9,7 @@ public enum Validator {
 
     private String validPrefix;
 
-    public void Initialize(int zeros) {
+    public void initialize(int zeros) {
         this.validPrefix = "0".repeat(zeros);
     }
 
