@@ -1,6 +1,7 @@
 package com.lykourgoss.blockchainapi;
 
 import com.lykourgoss.blockchainapi.miners.SingleThreadMiner;
+import com.google.gson.GsonBuilder;
 import com.lykourgoss.blockchainapi.validators.Validator;
 import lombok.Getter;
 
@@ -23,15 +24,18 @@ public class Blockchain<T extends Blockable> {
         return Validator.INSTANCE.validate(this);
     }
 
-    private void addBlock(Block<T> block){
-        blocks.add(block);
+    public String getLastHash(){
+        return blocks.isEmpty() ? "" : blocks.getLast().getHash();
     }
 
     public Block<T> addBlock(T blockable){
-        String previousHash = blocks.isEmpty() ? "" : blocks.getLast().getHash();
-        Block<T> block = new Block<>(previousHash, blockable);
+        Block<T> block = new Block<>(getLastHash(), blockable);
         miner.mineFor(block, 3);
-        addBlock(block);
+        blocks.add(block);
         return block;
+    }
+
+    public String toJson(){
+        return new GsonBuilder().setPrettyPrinting().create().toJson(this);
     }
 }
