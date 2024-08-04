@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi;
+package com.lykourgoss.blockchainapi.core;
 
 import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
 import com.lykourgoss.blockchainapi.miners.Miner;

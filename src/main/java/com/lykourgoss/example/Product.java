@@ -1,7 +1,6 @@
 package com.lykourgoss.example;
 
-import com.google.gson.Gson;
-import com.lykourgoss.blockchainapi.Blockable;
+import com.lykourgoss.blockchainapi.core.Blockable;
 import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
 import lombok.Getter;
 import lombok.Setter;

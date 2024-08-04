@@ -1,8 +1,8 @@
 package com.lykourgoss.blockchainapi.validators;
 
-import com.lykourgoss.blockchainapi.Block;
-import com.lykourgoss.blockchainapi.Blockable;
-import com.lykourgoss.blockchainapi.Blockchain;
+import com.lykourgoss.blockchainapi.core.Block;
+import com.lykourgoss.blockchainapi.core.Blockable;
+import com.lykourgoss.blockchainapi.core.Blockchain;
 
 public enum Validator {
     INSTANCE;
