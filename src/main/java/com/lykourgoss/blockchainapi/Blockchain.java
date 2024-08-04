@@ -21,7 +21,7 @@ public class Blockchain<T extends Blockable> {
         Validator.INSTANCE.initialize(zeros);
     }
 
-    private boolean validate(){
+    public boolean validate(){
         return Validator.INSTANCE.validate(this);
     }
 
