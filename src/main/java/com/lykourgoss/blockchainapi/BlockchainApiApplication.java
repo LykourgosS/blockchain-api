@@ -8,21 +8,25 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 
 import javax.swing.*;
-import java.awt.EventQueue;
 
 @SpringBootApplication
 public class BlockchainApiApplication {
 
     public static void main(String[] args) {
-        var context = new SpringApplicationBuilder(BlockchainApiApplication.class)
+        new SpringApplicationBuilder(BlockchainApiApplication.class)
                 .headless(false)
                 .web(WebApplicationType.NONE)
                 .run(args);
-
-        EventQueue.invokeLater(() -> {
-            var form = context.getBean(ControlPanel.class);
-            form.setVisible(true);
-        });
     }
 
+    @Bean
+    public CommandLineRunner run() {
+        return args -> {
+            // Ensure Swing components are created on the EDT
+            SwingUtilities.invokeLater(() -> {
+                ControlPanel form = new ControlPanel();
+                form.setVisible(true);
+            });
+        };
+    }
 }
