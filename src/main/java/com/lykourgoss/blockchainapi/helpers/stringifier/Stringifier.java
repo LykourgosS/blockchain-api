@@ -2,7 +2,7 @@ package com.lykourgoss.blockchainapi.helpers.stringifier;
 
 import java.lang.reflect.Field;
 
-public class Stringifier {
+public final class Stringifier {
     public static synchronized String toHexString(byte[] bytes){
         StringBuilder builder = new StringBuilder();
         for (byte b : bytes){
