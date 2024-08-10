@@ -3,11 +3,14 @@ package com.lykourgoss.blockchainapi.validators;
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.Blockable;
 import com.lykourgoss.blockchainapi.core.Blockchain;
+import org.springframework.beans.factory.annotation.Value;
 
 public enum Validator {
     INSTANCE;
 
     private String validPrefix;
+    @Value("${validator.zeros}")
+    private int zeros;
 
     public void initialize(int zeros) {
         this.validPrefix = "0".repeat(zeros);

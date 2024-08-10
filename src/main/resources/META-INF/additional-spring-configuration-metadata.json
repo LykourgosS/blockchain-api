@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "validator.zeros",
+      "type": "java.lang.Integer",
+      "description": "How many zeros should hashes have as prefix to be valid."
+    }
+  ]
+}
