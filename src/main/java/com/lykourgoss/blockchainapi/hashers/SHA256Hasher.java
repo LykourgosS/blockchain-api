@@ -6,7 +6,9 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class SHA256Hasher implements Hasher{
+public enum SHA256Hasher implements Hasher{
+    INSTANCE;
+
     @Override
     public String hash(String stringToHash) {
         byte[] bytes;

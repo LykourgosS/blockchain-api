@@ -30,7 +30,7 @@ public class Block<T extends Blockable> {
         return Stringifier.toString(this);
     }
 
-    public String calculateHash(){
-        return new SHA256Hasher().hash(stringify());
+    public String calculateHash() {
+        return SHA256Hasher.INSTANCE.hash(stringify());
     }
 }
