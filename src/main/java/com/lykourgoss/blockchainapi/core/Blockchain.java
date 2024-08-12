@@ -31,7 +31,7 @@ public class Blockchain<T extends Blockable> {
 
     public Block<T> addBlock(T blockable){
         Block<T> block = new Block<>(getLastHash(), blockable);
-        miner.mineFor(block, 3);
+        miner.mineFor(block);
         blocks.add(block);
         return block;
     }

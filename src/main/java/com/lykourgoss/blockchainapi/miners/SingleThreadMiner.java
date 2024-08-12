@@ -8,9 +8,8 @@ import com.lykourgoss.blockchainapi.validators.Validator;
 
 public class SingleThreadMiner implements Miner {
 
-
     @Override
-    public <T extends Blockable> void mineFor(Block<T> block, int zeros) {
+    public <T extends Blockable> void mineFor(Block<T> block) {
         while (!Validator.INSTANCE.validate(block.getHash())) {
             block.setNonce(block.getNonce() + 1);
             block.setHash(SHA256Hasher.INSTANCE.hash(block.stringify()));
