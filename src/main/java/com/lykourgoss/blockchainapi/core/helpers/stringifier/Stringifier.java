@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.helpers.stringifier;
+package com.lykourgoss.blockchainapi.core.helpers.stringifier;
 
 import java.lang.reflect.Field;
 

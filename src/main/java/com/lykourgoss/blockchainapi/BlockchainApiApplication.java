@@ -1,6 +1,6 @@
 package com.lykourgoss.blockchainapi;
 
-import com.lykourgoss.blockchainapi.gui.ControlPanel;
+import com.lykourgoss.blockchainapi.example.gui.ControlPanel;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

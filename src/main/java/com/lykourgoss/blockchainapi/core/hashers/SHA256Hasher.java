@@ -1,6 +1,6 @@
-package com.lykourgoss.blockchainapi.hashers;
+package com.lykourgoss.blockchainapi.core.hashers;
 
-import com.lykourgoss.blockchainapi.helpers.stringifier.Stringifier;
+import com.lykourgoss.blockchainapi.core.helpers.stringifier.Stringifier;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

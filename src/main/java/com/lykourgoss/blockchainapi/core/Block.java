@@ -1,9 +1,9 @@
 package com.lykourgoss.blockchainapi.core;
 
-import com.lykourgoss.blockchainapi.hashers.SHA256Hasher;
-import com.lykourgoss.blockchainapi.helpers.stringifier.Exclude;
-import com.lykourgoss.blockchainapi.helpers.stringifier.Stringifier;
-import com.lykourgoss.example.Product;
+import com.lykourgoss.blockchainapi.core.hashers.SHA256Hasher;
+import com.lykourgoss.blockchainapi.core.helpers.stringifier.Exclude;
+import com.lykourgoss.blockchainapi.core.helpers.stringifier.Stringifier;
+import com.lykourgoss.blockchainapi.example.Product;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

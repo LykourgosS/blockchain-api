@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.helpers;
+package com.lykourgoss.blockchainapi.core.helpers;
 
 import lombok.Getter;
 import org.springframework.beans.BeansException;

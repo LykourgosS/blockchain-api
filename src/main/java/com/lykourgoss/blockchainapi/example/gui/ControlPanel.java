@@ -1,9 +1,9 @@
-package com.lykourgoss.blockchainapi.gui;
+package com.lykourgoss.blockchainapi.example.gui;
 
 import com.lykourgoss.blockchainapi.core.Blockable;
-import com.lykourgoss.blockchainapi.helpers.ApplicationContextHelper;
-import com.lykourgoss.blockchainapi.persistence.BlockService;
-import com.lykourgoss.example.Product;
+import com.lykourgoss.blockchainapi.core.helpers.ApplicationContextHelper;
+import com.lykourgoss.blockchainapi.core.persistence.BlockService;
+import com.lykourgoss.blockchainapi.example.Product;
 
 import javax.swing.*;
 import java.awt.*;

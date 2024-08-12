@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.helpers.jsonizer;
+package com.lykourgoss.blockchainapi.core.helpers.jsonizer;
 
 public interface Jsonizer {
     String toJson(Object object);

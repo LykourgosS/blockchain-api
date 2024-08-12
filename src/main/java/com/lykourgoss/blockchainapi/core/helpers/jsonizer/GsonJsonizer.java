@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.helpers.jsonizer;
+package com.lykourgoss.blockchainapi.core.helpers.jsonizer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

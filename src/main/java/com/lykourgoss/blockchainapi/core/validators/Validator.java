@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.validators;
+package com.lykourgoss.blockchainapi.core.validators;
 
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.Blockable;

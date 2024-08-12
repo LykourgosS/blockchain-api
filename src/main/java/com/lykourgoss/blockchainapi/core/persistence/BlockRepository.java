@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.persistence;
+package com.lykourgoss.blockchainapi.core.persistence;
 
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.Blockable;

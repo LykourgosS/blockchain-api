@@ -1,10 +1,10 @@
-package com.lykourgoss.blockchainapi.persistence;
+package com.lykourgoss.blockchainapi.core.persistence;
 
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.Blockable;
-import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
-import com.lykourgoss.blockchainapi.miners.Miner;
-import com.lykourgoss.blockchainapi.validators.Validator;
+import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
+import com.lykourgoss.blockchainapi.core.miners.Miner;
+import com.lykourgoss.blockchainapi.core.validators.Validator;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

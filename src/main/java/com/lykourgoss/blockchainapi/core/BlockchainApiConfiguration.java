@@ -1,10 +1,9 @@
 package com.lykourgoss.blockchainapi.core;
 
-import com.lykourgoss.blockchainapi.validators.Validator;
+import com.lykourgoss.blockchainapi.core.validators.Validator;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 
 @Configuration
 public class BlockchainApiConfiguration {

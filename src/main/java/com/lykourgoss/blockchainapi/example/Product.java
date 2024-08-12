@@ -1,11 +1,9 @@
-package com.lykourgoss.example;
+package com.lykourgoss.blockchainapi.example;
 
 import com.lykourgoss.blockchainapi.core.Blockable;
-import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
-import jakarta.persistence.Embeddable;
+import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 

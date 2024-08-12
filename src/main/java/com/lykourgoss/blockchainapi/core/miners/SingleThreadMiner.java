@@ -1,10 +1,9 @@
-package com.lykourgoss.blockchainapi.miners;
+package com.lykourgoss.blockchainapi.core.miners;
 
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.Blockable;
-import com.lykourgoss.blockchainapi.hashers.Hasher;
-import com.lykourgoss.blockchainapi.hashers.SHA256Hasher;
-import com.lykourgoss.blockchainapi.validators.Validator;
+import com.lykourgoss.blockchainapi.core.hashers.SHA256Hasher;
+import com.lykourgoss.blockchainapi.core.validators.Validator;
 import org.springframework.stereotype.Component;
 
 @Component
