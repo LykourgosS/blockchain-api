@@ -3,6 +3,8 @@ package com.lykourgoss.blockchainapi.validators;
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.Blockable;
 
+import java.util.List;
+
 public enum Validator {
     INSTANCE;
 
@@ -32,10 +34,10 @@ public enum Validator {
         return true;
     }
 
-    public <T extends Blockable> boolean validate(Blockchain<T> blockchain) {
-        for (int i = 1; i < blockchain.getBlocks().size(); i++) {
-            Block<T> current = blockchain.getBlocks().get(i);
-            Block<T> previous = blockchain.getBlocks().get(i - 1);
+    public <T extends Blockable> boolean validate(List<Block<T>> blocks) {
+        for (int i = 1; i < blocks.size(); i++) {
+            Block<T> current = blocks.get(i);
+            Block<T> previous = blocks.get(i - 1);
             if (!validate(current, previous))
                 return false;
         }
