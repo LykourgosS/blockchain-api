@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.core;
+package com.lykourgoss.blockchainapi.core.config;
 
 import com.lykourgoss.blockchainapi.core.validators.Validator;
 import jakarta.annotation.PostConstruct;
