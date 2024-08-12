@@ -5,7 +5,9 @@ import com.lykourgoss.blockchainapi.core.Blockable;
 import com.lykourgoss.blockchainapi.hashers.Hasher;
 import com.lykourgoss.blockchainapi.hashers.SHA256Hasher;
 import com.lykourgoss.blockchainapi.validators.Validator;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SingleThreadMiner implements Miner {
 
     @Override
