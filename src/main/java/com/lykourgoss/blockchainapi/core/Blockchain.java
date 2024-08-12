@@ -18,7 +18,6 @@ public class Blockchain<T extends Blockable> {
     public Blockchain(Miner miner, int zeros) {
         this.miner = miner;
         this.blocks = new ArrayList<>();
-        Validator.INSTANCE.initialize(zeros);
     }
 
     public boolean validate(){
