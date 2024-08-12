@@ -2,13 +2,19 @@ package com.lykourgoss.example;
 
 import com.lykourgoss.blockchainapi.core.Blockable;
 import com.lykourgoss.blockchainapi.helpers.jsonizer.GsonJsonizer;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 public class Product implements Blockable {
-    private final String code;
+    @Id
+    private String code;
     private String title;
     private float price;
     private String description;
@@ -20,6 +26,10 @@ public class Product implements Blockable {
         this.price = builder.price;
         this.description = builder.description;
         this.category = builder.category;
+    }
+
+    public Product() {
+
     }
 
     public static final class Builder{

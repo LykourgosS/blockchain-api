@@ -3,9 +3,8 @@ package com.lykourgoss.blockchainapi.core;
 import com.lykourgoss.blockchainapi.hashers.SHA256Hasher;
 import com.lykourgoss.blockchainapi.helpers.stringifier.Exclude;
 import com.lykourgoss.blockchainapi.helpers.stringifier.Stringifier;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
+import com.lykourgoss.example.Product;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +18,7 @@ public class Block<T extends Blockable> {
     @Id
     private String hash;
     private String previousHash;
-    @Transient
+    @OneToOne(targetEntity = Product.class)
     private T blockableObject;
     private long timestamp;
     @Setter
