@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.core.persistence;
+package com.lykourgoss.blockchainapi.persistence;
 
 import java.util.List;
 
