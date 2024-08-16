@@ -2,15 +2,18 @@ package com.lykourgoss.blockchainapi.core.helpers.jsonizer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
 
 public enum GsonJsonizer implements Jsonizer {
     INSTANCE;
 
     private final Gson gson;
+    private final Gson prettyGson;
 
     GsonJsonizer() {
-        this.gson = new GsonBuilder().setPrettyPrinting().create();
+        this.gson = new Gson();
+        this.prettyGson = new GsonBuilder().setPrettyPrinting().create();
     }
 
     @Override
@@ -19,7 +22,22 @@ public enum GsonJsonizer implements Jsonizer {
     }
 
     @Override
+    public String toPrettyJson(Object object) {
+        return prettyGson.toJson(object);
+    }
+
+    @Override
     public <T> T fromJson(String string) {
-        return gson.fromJson(string, new TypeToken<T>(){}.getType());
+        return null;
+    }
+
+    @Override
+    public <T> T fromJson(String string, Type type) {
+        return gson.fromJson(string, type);
+    }
+
+    @Override
+    public <T> T fromJson(String string, Class<T> tClass) {
+        return gson.fromJson(string, tClass);
     }
 }
