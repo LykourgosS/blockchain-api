@@ -1,7 +1,6 @@
 package com.lykourgoss.blockchainapi.core.validators;
 
 import com.lykourgoss.blockchainapi.core.Block;
-import com.lykourgoss.blockchainapi.core.Blockable;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ public enum Validator {
         return hash.startsWith(validPrefix);
     }
 
-    public <T extends Blockable> Boolean validate(Block<T> block) {
+    public Boolean validate(Block block) {
         if (!validate(block.getHash()))
             return false;
         if (!block.getHash().equals(block.calculateHash()))
@@ -26,7 +25,7 @@ public enum Validator {
         return true;
     }
 
-    public <T extends Blockable> Boolean validate(Block<T> current, Block<T> previous) {
+    public Boolean validate(Block current, Block previous) {
         if (!validate(current))
             return false;
         if (!current.getPreviousHash().equals(previous.getHash()))
@@ -34,10 +33,10 @@ public enum Validator {
         return true;
     }
 
-    public <T extends Blockable> boolean validate(List<Block<T>> blocks) {
+    public boolean validate(List<Block> blocks) {
         for (int i = 1; i < blocks.size(); i++) {
-            Block<T> current = blocks.get(i);
-            Block<T> previous = blocks.get(i - 1);
+            Block current = blocks.get(i);
+            Block previous = blocks.get(i - 1);
             if (!validate(current, previous))
                 return false;
         }

@@ -3,34 +3,24 @@ package com.lykourgoss.blockchainapi.core;
 import com.lykourgoss.blockchainapi.core.hashers.SHA256Hasher;
 import com.lykourgoss.blockchainapi.core.helpers.stringifier.Exclude;
 import com.lykourgoss.blockchainapi.core.helpers.stringifier.Stringifier;
-import com.lykourgoss.blockchainapi.example.Product;
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.Instant;
 
-@Entity
-@Getter
-public class Block<T extends Blockable> {
-    @Setter
+
+@Data
+public class Block {
     @Exclude
-    @Id
     private String hash;
     private String previousHash;
-    @OneToOne(targetEntity = Product.class)
-    private T blockableObject;
+    private Object data;
     private long timestamp;
-    @Setter
     private int nonce;
 
-    public Block() {
-    }
-
-    public Block(String previousHash, T blockableObject) {
+    public Block(String previousHash, Object data) {
         this.hash = "";
         this.previousHash = previousHash;
-        this.blockableObject = blockableObject;
+        this.data = data;
         this.timestamp = Instant.now().toEpochMilli();
     }
 
