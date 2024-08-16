@@ -12,7 +12,20 @@ import java.time.Instant;
 public class ControlPanel extends JFrame {
     private final BlockService service;
     private JPanel mainPanel;
-    private JButton addButton;
+    private JTextField textFieldCode;
+    private JTextField textFieldTitle;
+    private JTextField textFieldDescription;
+    private JTextField textFieldCategory;
+    private JTextField textFieldPrice;
+    private JButton buttonClearAllTemp;
+    private JButton buttonAddAllTemp;
+    private JButton buttonAddTemp;
+    private JButton buttonAdd;
+    private JButton buttonSearch;
+    private JButton buttonValidate;
+    private JTextArea textAreaBlocks;
+    private JButton buttonClearText;
+    private JButton buttonDeleteBlockchain;
 
     public ControlPanel() {
         this.service = ApplicationContextHelper.getBean(BlockService.class);
