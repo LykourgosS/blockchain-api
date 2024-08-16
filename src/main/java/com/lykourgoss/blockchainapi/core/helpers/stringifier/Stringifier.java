@@ -20,7 +20,7 @@ public final class Stringifier {
             field.setAccessible(true);
             String fieldToString;
             try {
-                if (field.getType().isPrimitive() || field.getType().isAssignableFrom(String.class)){
+                if (field.getType().isPrimitive() || String.class.isAssignableFrom(field.getType())){
                     fieldToString =field.get(object).toString();
                 } else{
                     fieldToString = Stringifier.toString(field.get(object), fieldSeparator);
