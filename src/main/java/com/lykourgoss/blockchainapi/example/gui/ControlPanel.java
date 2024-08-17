@@ -1,13 +1,15 @@
 package com.lykourgoss.blockchainapi.example.gui;
 
 import com.lykourgoss.blockchainapi.core.helpers.ApplicationContextHelper;
-import com.lykourgoss.blockchainapi.persistence.BlockService;
+import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
 import com.lykourgoss.blockchainapi.example.Product;
+import com.lykourgoss.blockchainapi.persistence.BlockService;
+import com.lykourgoss.blockchainapi.reflection.FieldGetter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.text.SimpleDateFormat;
-import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ControlPanel extends JFrame {
     private final BlockService service;
@@ -27,8 +29,11 @@ public class ControlPanel extends JFrame {
     private JButton buttonClearText;
     private JButton buttonDeleteBlockchain;
 
+    private final List<Product> productsToAdd;
+
     public ControlPanel() {
         this.service = ApplicationContextHelper.getBean(BlockService.class);
+        productsToAdd = new ArrayList<>();
     }
 
     public void start() {
@@ -40,35 +45,114 @@ public class ControlPanel extends JFrame {
         setLocationRelativeTo(null);
         setVisible(true);
 
-        test();
+        buttonClearAllTemp.addActionListener(x -> clearAllTemp());
+        buttonAddAllTemp.addActionListener(x -> addAllTemp());
+        buttonAddTemp.addActionListener(x -> addTemp());
+        buttonAdd.addActionListener(x -> addNewBlock());
+        buttonSearch.addActionListener(x -> search());
+        buttonValidate.addActionListener(x -> validateBlockchain());
+        buttonClearText.addActionListener(x -> clearAllText());
+        buttonDeleteBlockchain.addActionListener(x -> deleteBlockchain());
     }
 
-    private void test() {
-        Product product = Product.builder()
-                .code("123")
-                .title("Test product")
-                .description("Only for testing")
-                .category("dairy")
-                .price(1.05F)
-                .build();
+    private Float tryGetPrice(boolean showMessage){
+        Float price = null;
+        try {
+            if (textFieldPrice.getText().isEmpty()){
+                price = 0F;
+            }else {
+                price = Float.parseFloat(textFieldPrice.getText());
+            }
+        } catch (Exception e) {
+            if (showMessage){
+                JOptionPane.showMessageDialog(this, e.toString());
+            }
+        }
+        return price;
+    }
 
-        Product product2 = Product.builder()
-                .code("1234")
-                .title("Test product 2")
-                .description("Only for testing the previous one")
-                .category("not dairy")
-                .price(1)
-                .build();
+    private boolean isPriceValid() {
+        return tryGetPrice(true) != null;
+    }
 
-        service.deleteAll();
+    private Product tryGetProduct() {
+        if (isPriceValid()) {
+            return Product.builder()
+                    .code(textFieldCode.getText())
+                    .title(textFieldTitle.getText())
+                    .description(textFieldDescription.getText())
+                    .category(textFieldCategory.getText())
+                    .price(tryGetPrice(false))
+                    .build();
+        } else {
+            return null;
+        }
+    }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss.SSS");
-        System.out.println(sdf.format(Instant.now().toEpochMilli()));
-        service.addWithData(product);
-        System.out.println(sdf.format(Instant.now().toEpochMilli()));
-        service.addWithData(product2);
-        System.out.println(sdf.format(Instant.now().toEpochMilli()));
-        System.out.println(service.toJson());
-        System.out.println(service.validate());
+    private void updateTextAreaBlocks(List<?> list){
+        textAreaBlocks.setText(GsonJsonizer.INSTANCE.toPrettyJson(list));
+    }
+
+    private void clearAllTemp(){
+        if (!productsToAdd.isEmpty()){
+            productsToAdd.clear();
+            updateTextAreaBlocks(productsToAdd);
+        }
+    }
+
+    private void addTemp() {
+        Product product = tryGetProduct();
+        if (product != null) {
+            productsToAdd.add(product);
+            updateTextAreaBlocks(productsToAdd);
+        }
+    }
+
+    private void addAllTemp() {
+        if(!productsToAdd.isEmpty()){
+            for (Product product : productsToAdd) {
+                service.addWithData(product);
+            }
+            clearAllTemp();
+        }
+    }
+
+    private void fetchAll(){
+        updateTextAreaBlocks(service.getAll());
+    }
+
+    private void addNewBlock(){
+        addTemp();
+        addAllTemp();
+        fetchAll();
+    }
+
+    private void search(){
+        Product product = tryGetProduct();
+        if (FieldGetter.INSTANCE.hasInitializedFields(product)){
+            updateTextAreaBlocks(service.getAllLike(product));
+        } else {
+            fetchAll();
+        }
+    }
+
+    private void validateBlockchain(){
+        boolean isValid = service.validate();
+        JOptionPane.showMessageDialog(this, "Blockchain Validate:" + isValid);
+    }
+
+    private void clearAllText(){
+        int result = JOptionPane.showConfirmDialog(this, "Clear temp add products / result blocks?");
+        if (result == JOptionPane.YES_OPTION){
+            textAreaBlocks.setText("");
+        }
+    }
+
+    private void deleteBlockchain(){
+        int deleteResult = JOptionPane.showConfirmDialog(this, "Delete all blocks from blockchain?");
+        if (deleteResult == JOptionPane.YES_OPTION){
+            service.deleteAll();
+            fetchAll();
+        }
     }
 }
