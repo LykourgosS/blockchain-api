@@ -1,4 +1,6 @@
-package com.lykourgoss.blockchainapi.reflection;
+package com.lykourgoss.blockchainapi.reflection.helpers;
+
+import com.lykourgoss.blockchainapi.reflection.TypeIdentifier;
 
 public enum ClassHelper implements TypeIdentifier<Class<?>> {
     INSTANCE;

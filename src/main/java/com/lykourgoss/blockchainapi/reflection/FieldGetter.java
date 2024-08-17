@@ -1,5 +1,7 @@
 package com.lykourgoss.blockchainapi.reflection;
 
+import com.lykourgoss.blockchainapi.reflection.helpers.ObjectHelper;
+
 import java.lang.reflect.Field;
 import java.util.*;
 import java.util.stream.Collectors;
