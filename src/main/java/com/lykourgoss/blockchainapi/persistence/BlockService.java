@@ -1,6 +1,7 @@
 package com.lykourgoss.blockchainapi.persistence;
 
 import com.lykourgoss.blockchainapi.core.Block;
+import com.lykourgoss.blockchainapi.reflection.Comparator;
 import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
 import com.lykourgoss.blockchainapi.core.mappers.BlockMapper;
 import com.lykourgoss.blockchainapi.core.miners.Miner;
@@ -8,6 +9,7 @@ import com.lykourgoss.blockchainapi.core.validators.Validator;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BlockService implements IService<Block, String> {
@@ -47,6 +49,11 @@ public class BlockService implements IService<Block, String> {
         repository.deleteAll();
     }
 
+    public List<Block> getAllLike(Object data){
+        return getAll().parallelStream()
+                .filter(x-> Comparator.INSTANCE.compareCommonFieldsExcludingDefaultValues(x.getData(),data))
+                .collect(Collectors.toList());
+    }
 
     @Override
     public Block add(Block tBlock) {
