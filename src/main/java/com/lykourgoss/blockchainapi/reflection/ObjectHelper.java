@@ -21,4 +21,21 @@ public enum ObjectHelper implements TypeIdentifier<Object> {
     public boolean isString(Object object) {
         return ClassHelper.INSTANCE.isString(object.getClass());
     }
+
+    public boolean hasDefaultValue(Object object) {
+        if (object == null){
+            return true;
+        }else {
+            if (isNumber(object)) {
+                return ((Number) object).doubleValue() == 0;
+            } else if (isBoolean(object)) {
+                return Boolean.FALSE.equals(object);
+            } else if (isChar(object)) {
+                return (Character) object == 0;
+            } else if(isString(object)){
+                return object.equals("");
+            }
+            return false;
+        }
+    }
 }
