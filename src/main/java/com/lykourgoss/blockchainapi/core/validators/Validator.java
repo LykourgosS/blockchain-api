@@ -20,7 +20,7 @@ public enum Validator {
     public Boolean validate(Block block) {
         if (!validate(block.getHash()))
             return false;
-        if (!block.getHash().equals(block.calculateHash()))
+        if (!block.getHash().equals(block.getCalculatedHash()))
             return false;
         return true;
     }

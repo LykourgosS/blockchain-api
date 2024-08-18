@@ -28,7 +28,7 @@ public class Block {
         return Stringifier.toString(this);
     }
 
-    public String calculateHash() {
+    public String getCalculatedHash() {
         return SHA256Hasher.INSTANCE.hash(stringify());
     }
 
