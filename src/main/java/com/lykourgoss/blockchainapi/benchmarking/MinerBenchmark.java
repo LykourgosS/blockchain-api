@@ -18,6 +18,11 @@ public class MinerBenchmark {
 
     @Benchmark
     public void singleThreadMining(SpringBootState springBootState, BlockState blockState){
-        springBootState.getMiner().mineFor(blockState.getBlock());
+        springBootState.getSingleThreadMiner().mineFor(blockState.getBlock());
+    }
+
+    @Benchmark
+    public void multiThreadMining(SpringBootState springBootState, BlockState blockState){
+        springBootState.getMultiThreadMiner().mineFor(blockState.getBlock());
     }
 }
