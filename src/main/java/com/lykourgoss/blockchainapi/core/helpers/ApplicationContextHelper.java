@@ -24,4 +24,8 @@ public final class ApplicationContextHelper implements ApplicationContextAware {
     public static <T> T getBean(Class<T> requiredType){
         return context.getBean(requiredType);
     }
+
+    public static Object getBean(String name){
+        return context.getBean(name);
+    }
 }
