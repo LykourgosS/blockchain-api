@@ -8,6 +8,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
@@ -22,7 +23,18 @@ public class CoreConfig {
     }
 
     @Bean
+    @Primary
     protected Miner miner(){
+        return singleThreadMiner();
+    }
+
+    @Bean
+    protected SingleThreadMiner singleThreadMiner(){
         return new SingleThreadMiner();
+    }
+
+    @Bean
+    protected MultiThreadMiner multiThreadMiner(){
+        return new MultiThreadMiner();
     }
 }
