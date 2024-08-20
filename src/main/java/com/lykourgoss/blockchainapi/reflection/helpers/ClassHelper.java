@@ -1,9 +1,16 @@
 package com.lykourgoss.blockchainapi.reflection.helpers;
 
+import com.google.gson.reflect.TypeToken;
 import com.lykourgoss.blockchainapi.reflection.TypeIdentifier;
+
+import java.lang.reflect.Type;
 
 public enum ClassHelper implements TypeIdentifier<Class<?>> {
     INSTANCE;
+
+    public <T> Class<?> getClassOf(){
+        return new TypeToken<T>(){}.getType().getClass();
+    }
 
     @Override
     public boolean isNumber(Class<?> aClass) {
