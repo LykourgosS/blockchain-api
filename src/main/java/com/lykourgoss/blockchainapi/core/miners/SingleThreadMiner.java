@@ -8,7 +8,7 @@ public class SingleThreadMiner implements Miner {
     @Override
     public void mineFor(Block block) {
         while (!Validator.INSTANCE.validate(block.getHash())) {
-            block.recalculateNextHash(1);
+            block.recalculateNextHashByAdding(1);
         }
     }
 }

@@ -32,16 +32,17 @@ public class Block {
         return SHA256Hasher.INSTANCE.hash(stringify());
     }
 
-    private void addToNonce(int i) {
-        nonce += i;
-    }
-
     private void recalculateHash() {
         setHash(getCalculatedHash());
     }
 
-    public void recalculateNextHash(int addToNonce){
-        addToNonce(addToNonce);
+    public void recalculateNextHashByAdding(int addToNonce) {
+        nonce += addToNonce;
+        recalculateHash();
+    }
+
+    public void recalculateNextHashBySetting(int newNonce) {
+        nonce = newNonce;
         recalculateHash();
     }
 }
