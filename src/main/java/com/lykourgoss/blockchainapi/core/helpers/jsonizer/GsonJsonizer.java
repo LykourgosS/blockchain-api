@@ -40,4 +40,9 @@ public enum GsonJsonizer implements Jsonizer {
     public <T> T fromJson(String string, Class<T> tClass) {
         return gson.fromJson(string, tClass);
     }
+
+    @Override
+    public <T> T getDeepCopy(T t, Class<T> tClass) {
+        return fromJson(toJson(t), tClass);
+    }
 }
