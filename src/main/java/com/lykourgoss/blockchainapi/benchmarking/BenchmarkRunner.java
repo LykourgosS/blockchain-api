@@ -37,10 +37,9 @@ public class BenchmarkRunner {
     private Options getOptions(){
         return new OptionsBuilder()
                 .include(aClass.getSimpleName())
-                .forks(1)
+                .forks(0)
                 .warmupIterations(WARMUP_ITERATIONS)
                 .measurementIterations(MEASUREMENT_ITERATIONS)
-                .forks(1)
                 .threads(1)
 //                .shouldDoGC(true)
                 .shouldFailOnError(true)

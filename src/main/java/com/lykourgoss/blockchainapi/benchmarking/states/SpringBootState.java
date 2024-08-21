@@ -22,17 +22,21 @@ public class SpringBootState {
     private MultiThreadMiner multiThreadMiner;
     private GenericSampler<?> sampler;
 
+    @Param({"1"})
+    public int numOfThreads;
+
     @Setup(Level.Trial)
     public void setupBeans() {
         context = new AnnotationConfigApplicationContext(BlockchainApiApplication.class);
 
         singleThreadMiner = context.getBean(SingleThreadMiner.class);
-        multiThreadMiner = context.getBean(MultiThreadMiner.class);
 
+        multiThreadMiner = context.getBean(MultiThreadMiner.class);
+        multiThreadMiner.setup(numOfThreads);
+        System.out.println(numOfThreads);
         sampler = context.getBean(GenericSampler.class);
 
-        BlockService service = context.getBean(BlockService.class);
-        previousHash = service.getLastHash();
+        previousHash = context.getBean(BlockService.class).getLastHash();
     }
 
     @TearDown(Level.Trial)
