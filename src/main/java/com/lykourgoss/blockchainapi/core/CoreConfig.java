@@ -1,7 +1,7 @@
 package com.lykourgoss.blockchainapi.core;
 
-import com.lykourgoss.blockchainapi.core.miners.Miner;
-import com.lykourgoss.blockchainapi.core.miners.MultiThreadMiner;
+import com.lykourgoss.blockchainapi.core.miners.interfaces.Miner;
+import com.lykourgoss.blockchainapi.core.miners.JavaAPIMultiThreadMiner;
 import com.lykourgoss.blockchainapi.core.miners.SingleThreadMiner;
 import com.lykourgoss.blockchainapi.core.validators.Validator;
 import jakarta.annotation.PostConstruct;
@@ -25,7 +25,7 @@ public class CoreConfig {
     @Bean
     @Primary
     protected Miner miner(){
-        return singleThreadMiner();
+        return javaAPIMultiThreadMiner();
     }
 
     @Bean
@@ -34,7 +34,7 @@ public class CoreConfig {
     }
 
     @Bean
-    protected MultiThreadMiner multiThreadMiner(){
-        return new MultiThreadMiner();
+    protected JavaAPIMultiThreadMiner javaAPIMultiThreadMiner(){
+        return new JavaAPIMultiThreadMiner();
     }
 }

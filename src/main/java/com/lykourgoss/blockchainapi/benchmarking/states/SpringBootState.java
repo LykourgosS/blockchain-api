@@ -3,7 +3,7 @@ package com.lykourgoss.blockchainapi.benchmarking.states;
 
 import com.lykourgoss.blockchainapi.BlockchainApiApplication;
 import com.lykourgoss.blockchainapi.benchmarking.sampler.GenericSampler;
-import com.lykourgoss.blockchainapi.core.miners.MultiThreadMiner;
+import com.lykourgoss.blockchainapi.core.miners.JavaAPIMultiThreadMiner;
 import com.lykourgoss.blockchainapi.core.miners.SingleThreadMiner;
 import com.lykourgoss.blockchainapi.persistence.BlockService;
 import lombok.Getter;
@@ -19,16 +19,20 @@ public class SpringBootState {
     @Setter
     private String previousHash;
     private SingleThreadMiner singleThreadMiner;
-    private MultiThreadMiner multiThreadMiner;
+    private JavaAPIMultiThreadMiner javaAPIMultiThreadMiner;
     private GenericSampler<?> sampler;
+
+    @Param({"1"})
+    public int numOfThreads;
 
     @Setup(Level.Trial)
     public void setupBeans() {
         context = new AnnotationConfigApplicationContext(BlockchainApiApplication.class);
 
         singleThreadMiner = context.getBean(SingleThreadMiner.class);
-        multiThreadMiner = context.getBean(MultiThreadMiner.class);
 
+        javaAPIMultiThreadMiner = context.getBean(JavaAPIMultiThreadMiner.class);
+        javaAPIMultiThreadMiner.setup(numOfThreads);
         sampler = context.getBean(GenericSampler.class);
 
         BlockService service = context.getBean(BlockService.class);

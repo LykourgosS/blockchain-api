@@ -23,6 +23,6 @@ public class MinerBenchmark {
 
     @Benchmark
     public void multiThreadMining(SpringBootState springBootState, BlockState blockState){
-        springBootState.getMultiThreadMiner().mineFor(blockState.getBlock());
+        springBootState.getJavaAPIMultiThreadMiner().mineFor(blockState.getBlock());
     }
 }
