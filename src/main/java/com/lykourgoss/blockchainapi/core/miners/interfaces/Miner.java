@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.core.miners;
+package com.lykourgoss.blockchainapi.core.miners.interfaces;
 
 import com.lykourgoss.blockchainapi.core.Block;
 
