@@ -19,10 +19,6 @@ public class JavaAPIMultiThreadMiner implements MultiThreadMiner {
     private List<Future<?>> futures;
     private ExecutorService service;
 
-    public void setup(int numOfThreads) {
-        this.numOfThreads = numOfThreads;
-    }
-
     private void reset() {
         nonce = new AtomicInteger(-1);
         service = Executors.newFixedThreadPool(numOfThreads);
@@ -70,6 +66,10 @@ public class JavaAPIMultiThreadMiner implements MultiThreadMiner {
         terminate(block);
     }
 
+    @Override
+    public void setup(int numOfThreads) {
+        this.numOfThreads = numOfThreads;
+    }
 
     @Override
     public void threadPartialMining(Block block, int start, int end) {

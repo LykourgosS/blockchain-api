@@ -10,6 +10,11 @@ public class CustomMultiThreadMiner implements MultiThreadMiner {
     }
 
     @Override
+    public void setup(int numOfThreads) {
+
+    }
+
+    @Override
     public void threadPartialMining(Block block, int start, int end) {
 
     }
