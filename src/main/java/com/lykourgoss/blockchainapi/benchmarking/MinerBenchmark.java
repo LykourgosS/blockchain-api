@@ -1,11 +1,9 @@
 package com.lykourgoss.blockchainapi.benchmarking;
 
 import com.lykourgoss.blockchainapi.benchmarking.states.BlockState;
-import com.lykourgoss.blockchainapi.benchmarking.states.SpringBootState;
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Mode;
-import org.openjdk.jmh.annotations.OutputTimeUnit;
+import com.lykourgoss.blockchainapi.benchmarking.states.miners.MultiThreadState;
+import com.lykourgoss.blockchainapi.benchmarking.states.miners.SingleThreadState;
+import org.openjdk.jmh.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,12 +15,18 @@ public class MinerBenchmark {
     }
 
     @Benchmark
-    public void singleThreadMining(SpringBootState springBootState, BlockState blockState){
-        springBootState.getSingleThreadMiner().mineFor(blockState.getBlock());
+    public void singleThreadMining(SingleThreadState singleThreadState, BlockState blockState){
+        singleThreadState.getSingleThreadMiner().mineFor(blockState.getBlock());
     }
 
     @Benchmark
-    public void multiThreadMining(SpringBootState springBootState, BlockState blockState){
-        springBootState.getJavaAPIMultiThreadMiner().mineFor(blockState.getBlock());
+    @Threads(Threads.MAX)
+    public void javaAPImultiThreadMining(MultiThreadState multiThreadState, BlockState blockState){
+        multiThreadState.getJavaAPIMultiThreadMiner().mineFor(blockState.getBlock());
+    }
+
+//    @Benchmark
+    public void customMultiThreadMining(MultiThreadState multiThreadState, BlockState blockState){
+        multiThreadState.getCustomMultiThreadMiner().mineFor(blockState.getBlock());
     }
 }
