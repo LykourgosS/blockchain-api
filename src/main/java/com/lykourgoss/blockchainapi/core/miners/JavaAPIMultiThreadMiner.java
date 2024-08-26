@@ -30,7 +30,7 @@ public class JavaAPIMultiThreadMiner implements MultiThreadMiner {
         for (int i = 0; i < numOfThreads; i++) {
             int start = i * chunkSize;
             int end = (i == numOfThreads - 1) ? Integer.MAX_VALUE : start + chunkSize;
-            Block blockDeepCopy = GsonJsonizer.INSTANCE.getDeepCopy(block, Block.class);
+            Block blockDeepCopy = block.getDeepCopy();
             futures.add(service.submit(() -> threadPartialMining(blockDeepCopy, start, end)));
         }
     }
