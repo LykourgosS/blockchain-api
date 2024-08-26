@@ -6,13 +6,17 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.runner.options.TimeValue;
+import org.openjdk.jmh.runner.options.VerboseMode;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 public class BenchmarkRunner {
 
-    private final static Integer MEASUREMENT_ITERATIONS = 3;
-    private final static Integer WARMUP_ITERATIONS = 3;
+    private final static Integer FORKS = 3;
+    private final static Integer WARMUP_ITERATIONS = 5;
+    private final static Integer MEASUREMENT_ITERATIONS = 5;
 
     private final Class<?> aClass;
 
@@ -37,16 +41,15 @@ public class BenchmarkRunner {
     private Options getOptions(){
         return new OptionsBuilder()
                 .include(aClass.getSimpleName())
-                .forks(1)
+                .forks(FORKS)
                 .warmupIterations(WARMUP_ITERATIONS)
+                .warmupTime(new TimeValue(2, TimeUnit.MINUTES))
                 .measurementIterations(MEASUREMENT_ITERATIONS)
-                .forks(1)
-                .threads(1)
-//                .shouldDoGC(true)
+                .measurementTime(new TimeValue(2, TimeUnit.MINUTES))
                 .shouldFailOnError(true)
                 .resultFormat(ResultFormatType.JSON)
                 .result(getResultFilePath())
-//                .jvmArgs("-server")
+                .verbosity(VerboseMode.EXTRA)
                 .build();
     }
 }

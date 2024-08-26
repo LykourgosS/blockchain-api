@@ -8,7 +8,7 @@ import org.openjdk.jmh.annotations.*;
 import java.util.concurrent.TimeUnit;
 
 @BenchmarkMode(Mode.AverageTime)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@OutputTimeUnit(TimeUnit.SECONDS)
 public class MinerBenchmark {
     public static void main(String[] args) throws Exception {
         new BenchmarkRunner(MinerBenchmark.class).run();

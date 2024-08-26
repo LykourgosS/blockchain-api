@@ -22,9 +22,7 @@ public class SpringBootState {
     public void setupBeans() {
         context = new AnnotationConfigApplicationContext(BlockchainApiApplication.class);
         sampler = context.getBean(GenericSampler.class);
-
-        BlockService service = context.getBean(BlockService.class);
-        previousHash = service.getLastHash();
+        previousHash = context.getBean(BlockService.class).getLastHash();
     }
 
     @TearDown(Level.Trial)
