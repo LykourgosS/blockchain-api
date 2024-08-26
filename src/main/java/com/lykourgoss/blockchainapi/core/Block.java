@@ -1,6 +1,7 @@
 package com.lykourgoss.blockchainapi.core;
 
 import com.lykourgoss.blockchainapi.core.hashers.SHA256Hasher;
+import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
 import com.lykourgoss.blockchainapi.core.helpers.stringifier.Exclude;
 import com.lykourgoss.blockchainapi.core.helpers.stringifier.Stringifier;
 import lombok.Data;
@@ -44,5 +45,11 @@ public class Block {
     public void recalculateNextHashBySetting(int newNonce) {
         nonce = newNonce;
         recalculateHash();
+    }
+
+    public Block getDeepCopy(){
+        Block copiedBlock = GsonJsonizer.INSTANCE.getDeepCopy(this, Block.class);
+        copiedBlock.data = GsonJsonizer.INSTANCE.getDeepCopy(data, data.getClass());
+        return copiedBlock;
     }
 }
