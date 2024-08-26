@@ -42,7 +42,7 @@ public enum GsonJsonizer implements Jsonizer {
     }
 
     @Override
-    public <T> T getDeepCopy(T t, Class<T> tClass) {
-        return fromJson(toJson(t), tClass);
+    public <T> T getDeepCopy(Object object, Class<T> tClass) {
+        return fromJson(toJson(object), tClass);
     }
 }

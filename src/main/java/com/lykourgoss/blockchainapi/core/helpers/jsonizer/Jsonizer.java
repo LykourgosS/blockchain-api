@@ -8,5 +8,5 @@ public interface Jsonizer {
     <T> T fromJson(String string);
     <T> T fromJson(String string, Type type);
     <T> T fromJson(String string, Class<T> tClass);
-    <T> T getDeepCopy(T t, Class<T> tClass);
+    <T> T getDeepCopy(Object t, Class<T> tClass);
 }
