@@ -4,6 +4,11 @@
       "name": "validator.zeros",
       "type": "java.lang.Integer",
       "description": "How many zeros should hashes have as prefix to be valid."
+    },
+    {
+      "name": "multi-thread-miner.num-of-threads",
+      "type": "java.lang.Integer",
+      "description": "How many threads should multi-thread miners have."
     }
   ]
 }

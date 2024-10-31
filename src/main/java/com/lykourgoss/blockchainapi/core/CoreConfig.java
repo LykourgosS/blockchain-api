@@ -19,6 +19,9 @@ public class CoreConfig {
     @Value("${validator.zeros}")
     private int VALIDATOR_ZEROS;
 
+    @Value("${multi-thread-miner.num-of-threads}")
+    private int MULTI_THREAD_MINERS_NUM_OF_THREADS;
+
     @PostConstruct
     private void init(){
         Validator.INSTANCE.init(VALIDATOR_ZEROS);
