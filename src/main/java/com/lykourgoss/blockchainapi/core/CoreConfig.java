@@ -40,15 +40,11 @@ public class CoreConfig {
 
     @Bean
     protected JavaAPIMultiThreadMiner javaAPIMultiThreadMiner(){
-        JavaAPIMultiThreadMiner miner = new JavaAPIMultiThreadMiner();
-        miner.setup(1);
-        return miner;
+        return new JavaAPIMultiThreadMiner(MULTI_THREAD_MINERS_NUM_OF_THREADS);
     }
 
     @Bean
     protected CustomMultiThreadMiner customMultiThreadMiner(){
-        CustomMultiThreadMiner miner = new CustomMultiThreadMiner();
-        miner.setup(1);
-        return miner;
+        return new CustomMultiThreadMiner(MULTI_THREAD_MINERS_NUM_OF_THREADS);
     }
 }
