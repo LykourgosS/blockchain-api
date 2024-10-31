@@ -55,16 +55,16 @@ public class ControlPanel extends JFrame {
         buttonDeleteBlockchain.addActionListener(x -> deleteBlockchain());
     }
 
-    private Float tryGetPrice(boolean showMessage){
+    private Float tryGetPrice(boolean showMessage) {
         Float price = null;
         try {
-            if (textFieldPrice.getText().isEmpty()){
+            if (textFieldPrice.getText().isEmpty()) {
                 price = 0F;
-            }else {
+            } else {
                 price = Float.parseFloat(textFieldPrice.getText());
             }
         } catch (Exception e) {
-            if (showMessage){
+            if (showMessage) {
                 JOptionPane.showMessageDialog(this, e.toString());
             }
         }
@@ -89,12 +89,12 @@ public class ControlPanel extends JFrame {
         }
     }
 
-    private void updateTextAreaBlocks(List<?> list){
+    private void updateTextAreaBlocks(List<?> list) {
         textAreaBlocks.setText(GsonJsonizer.INSTANCE.toPrettyJson(list));
     }
 
-    private void clearAllTemp(){
-        if (!productsToAdd.isEmpty()){
+    private void clearAllTemp() {
+        if (!productsToAdd.isEmpty()) {
             productsToAdd.clear();
             updateTextAreaBlocks(productsToAdd);
         }
@@ -109,7 +109,7 @@ public class ControlPanel extends JFrame {
     }
 
     private void addAllTemp() {
-        if(!productsToAdd.isEmpty()){
+        if (!productsToAdd.isEmpty()) {
             for (Product product : productsToAdd) {
                 service.addWithData(product);
             }
@@ -117,42 +117,43 @@ public class ControlPanel extends JFrame {
         }
     }
 
-    private void fetchAll(){
+    private void fetchAll() {
         updateTextAreaBlocks(service.getAll());
     }
 
-    private void addNewBlock(){
+    private void addNewBlock() {
         addTemp();
         addAllTemp();
         fetchAll();
     }
 
-    private void search(){
+    private void search() {
         Product product = tryGetProduct();
-        if (FieldGetter.INSTANCE.hasInitializedFields(product)){
+        if (FieldGetter.INSTANCE.hasInitializedFields(product)) {
             updateTextAreaBlocks(service.getAllLike(product));
         } else {
             fetchAll();
         }
     }
 
-    private void validateBlockchain(){
+    private void validateBlockchain() {
         boolean isValid = service.validate();
         JOptionPane.showMessageDialog(this, "Blockchain Validate:" + isValid);
     }
 
-    private void clearAllText(){
+    private void clearAllText() {
         int result = JOptionPane.showConfirmDialog(this, "Clear temp add products / result blocks?");
-        if (result == JOptionPane.YES_OPTION){
+        if (result == JOptionPane.YES_OPTION) {
             textAreaBlocks.setText("");
         }
     }
 
-    private void deleteBlockchain(){
+    private void deleteBlockchain() {
         int deleteResult = JOptionPane.showConfirmDialog(this, "Delete all blocks from blockchain?");
-        if (deleteResult == JOptionPane.YES_OPTION){
+        if (deleteResult == JOptionPane.YES_OPTION) {
             service.deleteAll();
             fetchAll();
         }
     }
+
 }
