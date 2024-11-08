@@ -1,26 +1,23 @@
 package com.lykourgoss.blockchainapi.benchmarking.states.miners;
 
-import com.lykourgoss.blockchainapi.benchmarking.states.SpringBootState;
-import com.lykourgoss.blockchainapi.core.miners.CustomMultiThreadMiner;
-import com.lykourgoss.blockchainapi.core.miners.JavaAPIMultiThreadMiner;
+import com.lykourgoss.blockchainapi.core.miners.MinerFactory;
+import com.lykourgoss.blockchainapi.core.miners.MinerType;
+import com.lykourgoss.blockchainapi.core.miners.interfaces.Miner;
 import lombok.Getter;
 import org.openjdk.jmh.annotations.*;
 
 @State(Scope.Thread)
 @Getter
 public class MultiThreadState {
-    private JavaAPIMultiThreadMiner javaAPIMultiThreadMiner;
-    private CustomMultiThreadMiner customMultiThreadMiner;
+    private Miner javaAPIMultiThreadMiner;
+    private Miner customMultiThreadMiner;
 
     @Param({"2", "4", "8", "16", "32"})
     public int numOfThreads;
 
     @Setup(Level.Trial)
-    public void setup(SpringBootState state) {
-        javaAPIMultiThreadMiner = state.getContext().getBean(JavaAPIMultiThreadMiner.class);
-        javaAPIMultiThreadMiner.setup(numOfThreads);
-
-        customMultiThreadMiner = state.getContext().getBean(CustomMultiThreadMiner.class);
-        customMultiThreadMiner.setup(numOfThreads);
+    public void setup() {
+        javaAPIMultiThreadMiner = MinerFactory.INSTANCE.getMiner(MinerType.JAVA_API_MULTI_THREAD, numOfThreads);
+        customMultiThreadMiner = MinerFactory.INSTANCE.getMiner(MinerType.CUSTOM_MULTI_THREAD, numOfThreads);
     }
 }
