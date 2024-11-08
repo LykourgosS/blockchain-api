@@ -6,6 +6,9 @@ import com.lykourgoss.blockchainapi.core.validators.Validator;
 
 public class SingleThreadMiner implements Miner {
 
+    SingleThreadMiner() {
+    }
+
     @Override
     public void mineFor(Block block) {
         while (!Validator.INSTANCE.validate(block)) {

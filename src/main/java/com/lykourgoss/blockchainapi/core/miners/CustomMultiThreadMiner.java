@@ -9,7 +9,7 @@ public class CustomMultiThreadMiner extends AbstractMultiThreadMiner {
     private List<Thread> threads;
     private volatile int nonce;
 
-    public CustomMultiThreadMiner(int numOfThreads) {
+    CustomMultiThreadMiner(int numOfThreads) {
         super(numOfThreads);
     }
 

@@ -18,7 +18,7 @@ public class JavaAPIMultiThreadMiner extends AbstractMultiThreadMiner {
     private ExecutorService service;
     private final AtomicInteger nonce;
 
-    public JavaAPIMultiThreadMiner(int numOfThreads) {
+    JavaAPIMultiThreadMiner(int numOfThreads) {
         super(numOfThreads);
         nonce = new AtomicInteger();
     }
