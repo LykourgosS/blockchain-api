@@ -19,6 +19,9 @@ public class CoreConfig {
     @Value("${validator.zeros}")
     private int VALIDATOR_ZEROS;
 
+    @Value("${miner-type}")
+    private MinerType MINER_TYPE;
+
     @Value("${multi-thread-miner.num-of-threads}")
     private int MULTI_THREAD_MINERS_NUM_OF_THREADS;
 

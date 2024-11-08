@@ -6,6 +6,11 @@
       "description": "How many zeros should hashes have as prefix to be valid."
     },
     {
+      "name": "miner-type",
+      "type": "com.lykourgoss.blockchainapi.core.miners.MinerType",
+      "description": "What type of miner should be used (i.e. single thread, multi-thread using Java API or multi-thread with custom implementation)."
+    },
+    {
       "name": "multi-thread-miner.num-of-threads",
       "type": "java.lang.Integer",
       "description": "How many threads should multi-thread miners have."
