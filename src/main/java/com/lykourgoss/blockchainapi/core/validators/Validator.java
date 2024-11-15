@@ -18,9 +18,11 @@ public enum Validator {
     }
 
     public Boolean validate(Block block) {
-        if (!validate(block.getHash()))
+        String currentHash = block.getHash();
+        String calculatedHash = block.getCalculatedHash();
+        if (!validate(currentHash))
             return false;
-        if (!block.getHash().equals(block.getCalculatedHash()))
+        if (!currentHash.equals(calculatedHash))
             return false;
         return true;
     }
