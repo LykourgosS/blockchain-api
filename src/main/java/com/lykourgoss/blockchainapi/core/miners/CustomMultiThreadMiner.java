@@ -44,6 +44,12 @@ public class CustomMultiThreadMiner extends AbstractMultiThreadMiner {
 
     @Override
     protected void terminate() {
-
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 }
