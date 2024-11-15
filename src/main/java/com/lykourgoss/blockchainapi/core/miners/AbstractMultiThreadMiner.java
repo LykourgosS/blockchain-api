@@ -34,14 +34,12 @@ public abstract class AbstractMultiThreadMiner implements MultiThreadMiner {
     @Override
     public void threadPartialMining(Block block, int start, int end) {
         for (int i = start; i < end; i++) {
-            if (Thread.currentThread().isInterrupted() ||
-                    nonceFound()) {
+            if (nonceFound()) {
                 break;
             }
             block.recalculateNextHashBySetting(i);
             if (Validator.INSTANCE.validate(block)) {
                 setNonce(i);
-                interruptAllThreads();
                 break;
             }
         }
