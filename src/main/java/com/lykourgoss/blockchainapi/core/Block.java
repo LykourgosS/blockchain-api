@@ -23,6 +23,8 @@ public class Block {
         this.previousHash = previousHash;
         this.data = data;
         this.timestamp = Instant.now().toEpochMilli();
+
+        recalculateNextHashBySetting(0);
     }
 
     public String stringify() {
