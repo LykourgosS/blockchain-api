@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.benchmarking.states.miners;
+package com.lykourgoss.blockchainapi.benchmarking.states.forMiners;
 
 import com.lykourgoss.blockchainapi.core.miners.MinerFactory;
 import com.lykourgoss.blockchainapi.core.miners.MinerType;
@@ -8,7 +8,7 @@ import org.openjdk.jmh.annotations.*;
 
 @State(Scope.Thread)
 @Getter
-public class MultiThreadState {
+public class MultiThreadMinerState {
     private Miner javaAPIMultiThreadMiner;
     private Miner customMultiThreadMiner;
 

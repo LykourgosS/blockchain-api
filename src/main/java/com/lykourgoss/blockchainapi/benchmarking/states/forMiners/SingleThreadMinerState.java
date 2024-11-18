@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.benchmarking.states.miners;
+package com.lykourgoss.blockchainapi.benchmarking.states.forMiners;
 
 import com.lykourgoss.blockchainapi.core.miners.MinerFactory;
 import com.lykourgoss.blockchainapi.core.miners.MinerType;
@@ -11,7 +11,7 @@ import org.openjdk.jmh.annotations.State;
 
 @State(Scope.Benchmark)
 @Getter
-public class SingleThreadState {
+public class SingleThreadMinerState {
     private Miner singleThreadMiner;
 
     @Setup(Level.Trial)
