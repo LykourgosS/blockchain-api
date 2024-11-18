@@ -27,7 +27,7 @@ public enum Validator {
         return true;
     }
 
-    public Boolean validate(Block current, Block previous) {
+    private Boolean validate(Block current, Block previous) {
         if (!validate(current))
             return false;
         if (!current.getPreviousHash().equals(previous.getHash()))
