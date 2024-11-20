@@ -13,7 +13,7 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class JavaAPIMultiThreadMiner extends AbstractMultiThreadMiner {
+class JavaAPIMultiThreadMiner extends AbstractMultiThreadMiner {
     private List<Future<?>> futures;
     private ExecutorService service;
     private final AtomicInteger nonce;

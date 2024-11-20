@@ -5,7 +5,7 @@ import com.lykourgoss.blockchainapi.core.Block;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomMultiThreadMiner extends AbstractMultiThreadMiner {
+class CustomMultiThreadMiner extends AbstractMultiThreadMiner {
     private List<Thread> threads;
     private volatile int nonce;
 

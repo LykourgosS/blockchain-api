@@ -4,7 +4,7 @@ import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.miners.interfaces.MultiThreadMiner;
 import com.lykourgoss.blockchainapi.core.validators.Validator;
 
-public abstract class AbstractMultiThreadMiner implements MultiThreadMiner {
+abstract class AbstractMultiThreadMiner implements MultiThreadMiner {
     protected int numOfThreads;
 
     public AbstractMultiThreadMiner(int numOfThreads) {

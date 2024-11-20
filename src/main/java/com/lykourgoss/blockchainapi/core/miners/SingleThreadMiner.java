@@ -4,7 +4,7 @@ import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.core.miners.interfaces.Miner;
 import com.lykourgoss.blockchainapi.core.validators.Validator;
 
-public class SingleThreadMiner implements Miner {
+class SingleThreadMiner implements Miner {
 
     SingleThreadMiner() {
     }
