@@ -115,6 +115,7 @@ public class ControlPanel extends JFrame {
             }
             clearAllTemp();
         }
+        fetchAll();
     }
 
     private void fetchAll() {
@@ -124,7 +125,6 @@ public class ControlPanel extends JFrame {
     private void addNewBlock() {
         addTemp();
         addAllTemp();
-        fetchAll();
     }
 
     private void search() {
