@@ -20,7 +20,7 @@ public class MinerBenchmark {
     }
 
     @Benchmark
-    public void javaAPImultiThreadMining(MultiThreadMinerState minerState, BlockState blockState){
+    public void javaAPIMultiThreadMining(MultiThreadMinerState minerState, BlockState blockState){
         minerState.getJavaAPIMultiThreadMiner().mineFor(blockState.getBlock());
     }
 
