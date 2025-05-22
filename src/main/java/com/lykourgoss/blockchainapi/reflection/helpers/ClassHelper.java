@@ -8,8 +8,12 @@ import java.lang.reflect.Type;
 public enum ClassHelper implements TypeIdentifier<Class<?>> {
     INSTANCE;
 
+    public <T> Type getTypeOf(){
+        return new TypeToken<T>(){}.getType();
+    }
+
     public <T> Class<?> getClassOf(){
-        return new TypeToken<T>(){}.getType().getClass();
+        return INSTANCE.<T>getTypeOf().getClass();
     }
 
     @Override
