@@ -1,9 +1,7 @@
 package com.lykourgoss.blockchainapi.core.miners;
 
 import com.lykourgoss.blockchainapi.core.Block;
-import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
-import com.lykourgoss.blockchainapi.core.miners.interfaces.MultiThreadMiner;
-import com.lykourgoss.blockchainapi.core.validators.Validator;
+import com.lykourgoss.blockchainapi.core.helpers.threading.ExecutorServiceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +12,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class JavaAPIMultiThreadMiner extends AbstractMultiThreadMiner {
+    private final AtomicInteger nonce;
     private List<Future<?>> futures;
     private ExecutorService service;
-    private final AtomicInteger nonce;
 
     JavaAPIMultiThreadMiner(int numOfThreads) {
         super(numOfThreads);
@@ -25,7 +23,11 @@ class JavaAPIMultiThreadMiner extends AbstractMultiThreadMiner {
 
     @Override
     protected void configureThreadCollection() {
-        service = Executors.newFixedThreadPool(numOfThreads);
+        service = Executors.newFixedThreadPool(numOfThreads, r -> {
+            Thread thread = new Thread(r);
+            thread.setName("MinerThread-" + thread.threadId());
+            return thread;
+        });
         futures = new ArrayList<>();
     }
 
@@ -46,23 +48,11 @@ class JavaAPIMultiThreadMiner extends AbstractMultiThreadMiner {
 
     @Override
     protected void interruptAllThreads() {
-        for (Future<?> future : futures) {
-//            if (!future.isDone()) {
-                future.cancel(true);
-//            }
-        }
+        ExecutorServiceHelper.cancelFutures(futures);
     }
 
     @Override
     protected void terminate() {
-        service.shutdown();
-        try {
-            if (!service.awaitTermination(2, TimeUnit.MINUTES)) {
-                service.shutdownNow();
-            }
-        } catch (InterruptedException e) {
-            service.shutdownNow();
-            Thread.currentThread().interrupt();
-        }
+        ExecutorServiceHelper.shutdownExecutor(service, 2, TimeUnit.MINUTES);
     }
 }
