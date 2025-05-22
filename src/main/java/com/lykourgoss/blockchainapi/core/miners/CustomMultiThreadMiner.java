@@ -25,20 +25,23 @@ class CustomMultiThreadMiner extends AbstractMultiThreadMiner {
 
     @Override
     protected void setNonce(int nonce) {
-        this.nonce=nonce;
+        this.nonce = nonce;
     }
 
     @Override
     protected void assignJobToThreads(Block block, int start, int end) {
         Thread thread = new Thread(() -> threadPartialMining(block, start, end));
-        threads.add(thread);
+        thread.setName("MinerThread-" + thread.threadId());
         thread.start();
+        threads.add(thread);
     }
 
     @Override
     protected void interruptAllThreads() {
         for (Thread thread : threads) {
-            thread.interrupt();
+            if (!thread.equals(Thread.currentThread())) {
+                thread.interrupt();
+            }
         }
     }
 
