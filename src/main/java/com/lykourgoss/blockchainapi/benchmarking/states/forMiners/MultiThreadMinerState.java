@@ -10,6 +10,7 @@ import org.openjdk.jmh.annotations.*;
 @Getter
 public class MultiThreadMinerState {
     private Miner javaAPIMultiThreadMiner;
+    private Miner javaAPIMultiThreadMinerV2;
     private Miner customMultiThreadMiner;
 
     @Param({"2", "4", "8", "16", "32"})
@@ -18,6 +19,7 @@ public class MultiThreadMinerState {
     @Setup(Level.Trial)
     public void setup() {
         javaAPIMultiThreadMiner = MinerFactory.INSTANCE.getMiner(MinerType.JAVA_API_MULTI_THREAD, numOfThreads);
+        javaAPIMultiThreadMinerV2 = MinerFactory.INSTANCE.getMiner(MinerType.JAVA_API_MULTI_THREAD_V2, numOfThreads);
         customMultiThreadMiner = MinerFactory.INSTANCE.getMiner(MinerType.CUSTOM_MULTI_THREAD, numOfThreads);
     }
 }

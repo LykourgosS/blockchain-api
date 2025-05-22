@@ -36,6 +36,11 @@ public class MinerBenchmark {
     }
 
     @Benchmark
+    public void javaAPIMultiThreadMiningV2(MultiThreadMinerState minerState, BlockState blockState){
+        minerState.getJavaAPIMultiThreadMinerV2().mineFor(blockState.getBlock());
+    }
+
+    @Benchmark
     public void customMultiThreadMining(MultiThreadMinerState minerState, BlockState blockState){
         minerState.getCustomMultiThreadMiner().mineFor(blockState.getBlock());
     }
