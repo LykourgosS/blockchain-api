@@ -11,7 +11,18 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.SECONDS)
 public class MinerBenchmark {
     public static void main(String[] args) throws Exception {
-        new BenchmarkRunner(MinerBenchmark.class).run();
+        BenchmarkRunnerSettings settings = new BenchmarkRunnerSettings(
+                1,
+                1,
+                1,
+                1,
+                TimeUnit.MINUTES,
+                3,
+                1,
+                TimeUnit.MINUTES
+        );
+        settings.calculateBenchmarkLastingTimeInMinutes();
+        new BenchmarkRunner(MinerBenchmark.class, settings).run();
     }
 
     @Benchmark
