@@ -20,12 +20,12 @@ abstract class AbstractMultiThreadMiner implements MultiThreadMiner {
     protected abstract void assignJobToThreads(Block block, int start, int end);
 
     protected abstract void interruptAllThreads();
+    
     protected abstract void terminate();
 
     @Override
     public void mineFor(Block block) {
         setNonce(-1);
-        configureThreadCollection();
         createAndStartThreads(block);
         terminate();
         block.recalculateNextHashBySetting(getNonce());
@@ -34,12 +34,13 @@ abstract class AbstractMultiThreadMiner implements MultiThreadMiner {
     @Override
     public void threadPartialMining(Block block, int start, int end) {
         for (int i = start; i < end; i++) {
-            if (nonceFound()) {
+            if (Thread.currentThread().isInterrupted() || nonceFound()) {
                 break;
             }
             block.recalculateNextHashBySetting(i);
             if (Validator.INSTANCE.validate(block)) {
                 setNonce(i);
+                interruptAllThreads();
                 break;
             }
         }
