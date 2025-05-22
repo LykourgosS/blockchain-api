@@ -6,7 +6,7 @@ import com.lykourgoss.blockchainapi.core.miners.interfaces.Miner;
 import lombok.Getter;
 import org.openjdk.jmh.annotations.*;
 
-@State(Scope.Thread)
+@State(Scope.Benchmark)
 @Getter
 public class MultiThreadMinerState {
     private Miner javaAPIMultiThreadMiner;
