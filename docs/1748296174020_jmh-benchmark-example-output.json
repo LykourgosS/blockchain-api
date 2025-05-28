@@ -1,0 +1,916 @@
+[
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.customMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "2"
+    },
+    "primaryMetric": {
+      "score": 37.41077891086996,
+      "scoreError": 15.273715937172215,
+      "scoreConfidence": [22.137062973697745, 52.68449484804217],
+      "scorePercentiles": {
+        "0.0": 14.935799907692308,
+        "50.0": 35.9529109375,
+        "90.0": 60.529338599999996,
+        "95.0": 60.6600039,
+        "99.0": 60.6600039,
+        "99.9": 60.6600039,
+        "99.99": 60.6600039,
+        "99.999": 60.6600039,
+        "99.9999": 60.6600039,
+        "100.0": 60.6600039
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [35.9529109375, 28.42524374285714, 60.6600039, 37.0421253, 24.16490573],
+        [
+          38.84105348333333, 22.91748176666667, 33.88469108333334,
+          34.924092916666666, 51.460488925
+        ],
+        [
+          60.4422284, 14.935799907692308, 57.484646125, 36.43930242,
+          23.586709025
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.customMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "4"
+    },
+    "primaryMetric": {
+      "score": 27.618771208180615,
+      "scoreError": 14.641653094458771,
+      "scoreConfidence": [12.977118113721843, 42.260424302639386],
+      "scorePercentiles": {
+        "0.0": 13.50513365,
+        "50.0": 22.6201326625,
+        "90.0": 56.349418707000005,
+        "95.0": 60.57335418,
+        "99.0": 60.57335418,
+        "99.9": 60.57335418,
+        "99.99": 60.57335418,
+        "99.999": 60.57335418,
+        "99.9999": 60.57335418,
+        "100.0": 60.57335418
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          24.176427625, 13.50513365, 36.62452678, 18.11992870909091, 24.84632951
+        ],
+        [
+          36.144220233333336, 19.27800411818182, 22.6201326625,
+          20.51486728888889, 28.086744525
+        ],
+        [14.820688735714286, 21.5804469, 60.57335418, 19.85730148, 53.533461725]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.customMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "8"
+    },
+    "primaryMetric": {
+      "score": 28.93073445094517,
+      "scoreError": 9.679644672875746,
+      "scoreConfidence": [19.251089778069424, 38.61037912382092],
+      "scorePercentiles": {
+        "0.0": 16.407292618181817,
+        "50.0": 30.691608233333334,
+        "90.0": 43.170523599999996,
+        "95.0": 44.98428565,
+        "99.0": 44.98428565,
+        "99.9": 44.98428565,
+        "99.99": 44.98428565,
+        "99.999": 44.98428565,
+        "99.9999": 44.98428565,
+        "100.0": 44.98428565
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          44.98428565, 31.158418333333334, 31.898224533333334,
+          32.867903842857146, 22.412442972727273
+        ],
+        [
+          16.609080836363635, 35.22696821666667, 41.9613489, 23.241107375,
+          30.691608233333334
+        ],
+        [
+          38.6907641, 25.932832185714286, 24.9841667, 16.407292618181817,
+          16.894572266666668
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.customMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "16"
+    },
+    "primaryMetric": {
+      "score": 23.854138856025987,
+      "scoreError": 8.467197966240464,
+      "scoreConfidence": [15.386940889785523, 32.32133682226645],
+      "scorePercentiles": {
+        "0.0": 10.636898170588236,
+        "50.0": 22.5129357875,
+        "90.0": 35.973844813333336,
+        "95.0": 38.73363908333334,
+        "99.0": 38.73363908333334,
+        "99.9": 38.73363908333334,
+        "99.99": 38.73363908333334,
+        "99.999": 38.73363908333334,
+        "99.9999": 38.73363908333334,
+        "100.0": 38.73363908333334
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          21.08535587777778, 15.202485675, 10.636898170588236, 20.81483108,
+          32.67101615714286
+        ],
+        [
+          16.9703175, 15.515439291666667, 29.97183815714286, 38.73363908333334,
+          34.13398196666667
+        ],
+        [
+          24.731331925, 22.5129357875, 25.762201742857144, 19.76658704,
+          29.303223385714286
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.customMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "32"
+    },
+    "primaryMetric": {
+      "score": 26.803689434096682,
+      "scoreError": 11.891702741351942,
+      "scoreConfidence": [14.91198669274474, 38.695392175448625],
+      "scorePercentiles": {
+        "0.0": 16.447581545454547,
+        "50.0": 24.720073925,
+        "90.0": 46.288564312857154,
+        "95.0": 62.308305775,
+        "99.0": 62.308305775,
+        "99.9": 62.308305775,
+        "99.99": 62.308305775,
+        "99.999": 62.308305775,
+        "99.9999": 62.308305775,
+        "100.0": 62.308305775
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          24.720073925, 20.058456, 35.608736671428574, 17.856495109090908,
+          25.63376965
+        ],
+        [
+          62.308305775, 28.125349475, 24.71739397, 16.447581545454547,
+          32.421431383333335
+        ],
+        [25.6289692, 18.70626706, 21.17695543, 26.201683557142857, 22.44387276]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "2"
+    },
+    "primaryMetric": {
+      "score": 29.984757407807837,
+      "scoreError": 11.421784037815653,
+      "scoreConfidence": [18.562973369992186, 41.40654144562349],
+      "scorePercentiles": {
+        "0.0": 17.2573454,
+        "50.0": 27.247326577777777,
+        "90.0": 47.968346344,
+        "95.0": 48.33354505,
+        "99.0": 48.33354505,
+        "99.9": 48.33354505,
+        "99.99": 48.33354505,
+        "99.999": 48.33354505,
+        "99.9999": 48.33354505,
+        "100.0": 48.33354505
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          27.247326577777777, 25.741687075, 46.613496725, 35.619457257142855,
+          19.87680025
+        ],
+        [
+          26.003197275, 17.787079936363636, 29.43980346, 48.33354505,
+          24.4799266875
+        ],
+        [17.2573454, 34.77268125, 47.72488054, 30.311978183333334, 18.56215545]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "4"
+    },
+    "primaryMetric": {
+      "score": 27.616574753805555,
+      "scoreError": 13.082953945128713,
+      "scoreConfidence": [14.533620808676842, 40.699528698934266],
+      "scorePercentiles": {
+        "0.0": 14.136121342857143,
+        "50.0": 26.17363782857143,
+        "90.0": 49.312406645,
+        "95.0": 54.81677345,
+        "99.0": 54.81677345,
+        "99.9": 54.81677345,
+        "99.99": 54.81677345,
+        "99.999": 54.81677345,
+        "99.9999": 54.81677345,
+        "100.0": 54.81677345
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [54.81677345, 18.25253418, 30.7351142625, 45.642828775, 41.7755431],
+        [
+          33.0091232, 16.642237791666666, 30.196423085714287, 15.03783633125,
+          22.950991775
+        ],
+        [
+          29.974073042857142, 18.42091065, 26.17363782857143,
+          14.136121342857143, 16.484472491666665
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "8"
+    },
+    "primaryMetric": {
+      "score": 27.311123068366484,
+      "scoreError": 10.804170150024367,
+      "scoreConfidence": [16.506952918342115, 38.11529321839085],
+      "scorePercentiles": {
+        "0.0": 15.313410307692308,
+        "50.0": 26.22498455,
+        "90.0": 45.986790872,
+        "95.0": 48.13193588,
+        "99.0": 48.13193588,
+        "99.9": 48.13193588,
+        "99.99": 48.13193588,
+        "99.999": 48.13193588,
+        "99.9999": 48.13193588,
+        "100.0": 48.13193588
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          26.22498455, 15.313410307692308, 20.29689052222222,
+          31.782440316666666, 36.768570516666664
+        ],
+        [
+          15.846280938461538, 22.950060025, 30.21100321666667, 30.92813805,
+          19.5906637
+        ],
+        [
+          48.13193588, 18.768835845454547, 30.093674566666667, 44.5566942,
+          18.20326339
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "16"
+    },
+    "primaryMetric": {
+      "score": 25.626158860425985,
+      "scoreError": 11.303772041618885,
+      "scoreConfidence": [14.3223868188071, 36.92993090204487],
+      "scorePercentiles": {
+        "0.0": 13.940499330769232,
+        "50.0": 22.94727819,
+        "90.0": 45.72288650000001,
+        "95.0": 57.518764075,
+        "99.0": 57.518764075,
+        "99.9": 57.518764075,
+        "99.99": 57.518764075,
+        "99.999": 57.518764075,
+        "99.9999": 57.518764075,
+        "100.0": 57.518764075
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          18.619866363636362, 21.434519177777776, 22.7465110625, 23.8359446,
+          23.1174321125
+        ],
+        [
+          24.13845415, 29.13787417142857, 17.47905455, 21.42221211111111,
+          13.940499330769232
+        ],
+        [
+          19.13560972, 57.518764075, 22.94727819, 31.059395175,
+          37.85896811666667
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "32"
+    },
+    "primaryMetric": {
+      "score": 24.902825122487382,
+      "scoreError": 7.947584647149765,
+      "scoreConfidence": [16.955240475337618, 32.850409769637146],
+      "scorePercentiles": {
+        "0.0": 14.560672938461538,
+        "50.0": 24.404841475,
+        "90.0": 38.09166790514286,
+        "95.0": 38.77741042,
+        "99.0": 38.77741042,
+        "99.9": 38.77741042,
+        "99.99": 38.77741042,
+        "99.999": 38.77741042,
+        "99.9999": 38.77741042,
+        "100.0": 38.77741042
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          25.800021014285715, 20.151135677777777, 24.5188221625, 20.29225665,
+          14.560672938461538
+        ],
+        [
+          18.21525749, 24.039934425, 29.47055224, 32.01799695, 37.63450622857143
+        ],
+        [19.05346868, 24.404841475, 29.4598311, 38.77741042, 15.145669385714285]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMiningV2",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "2"
+    },
+    "primaryMetric": {
+      "score": 30.59443381847715,
+      "scoreError": 12.39723893089354,
+      "scoreConfidence": [18.19719488758361, 42.99167274937069],
+      "scorePercentiles": {
+        "0.0": 15.799738025,
+        "50.0": 27.637858642857143,
+        "90.0": 47.888529585,
+        "95.0": 49.041676575,
+        "99.0": 49.041676575,
+        "99.9": 49.041676575,
+        "99.99": 49.041676575,
+        "99.999": 49.041676575,
+        "99.9999": 49.041676575,
+        "100.0": 49.041676575
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          27.637858642857143, 46.500972625, 29.335606785714287, 49.041676575,
+          24.03499895
+        ],
+        [
+          15.799738025, 23.2897551, 46.9935242, 16.834943136363638, 47.119764925
+        ],
+        [
+          25.712734955555554, 34.80128375, 20.5381533, 21.13116234,
+          30.144333966666668
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMiningV2",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "4"
+    },
+    "primaryMetric": {
+      "score": 31.356158530817222,
+      "scoreError": 13.517203341255179,
+      "scoreConfidence": [17.838955189562043, 44.8733618720724],
+      "scorePercentiles": {
+        "0.0": 13.836274921428572,
+        "50.0": 27.017087685714287,
+        "90.0": 50.273426236,
+        "95.0": 50.9583223,
+        "99.0": 50.9583223,
+        "99.9": 50.9583223,
+        "99.99": 50.9583223,
+        "99.999": 50.9583223,
+        "99.9999": 50.9583223,
+        "100.0": 50.9583223
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          42.155967257142855, 21.987268555555556, 16.25252095, 50.9583223,
+          44.46588187142857
+        ],
+        [
+          25.072556825, 27.680723571428572, 26.920237871428572, 37.7649991,
+          49.81682886
+        ],
+        [
+          13.836274921428572, 27.017087685714287, 17.19425709090909,
+          45.73413068, 23.485320422222223
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMiningV2",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "8"
+    },
+    "primaryMetric": {
+      "score": 25.542816839097647,
+      "scoreError": 11.33452270936163,
+      "scoreConfidence": [14.208294129736016, 36.877339548459275],
+      "scorePercentiles": {
+        "0.0": 12.869062242857144,
+        "50.0": 23.139854725,
+        "90.0": 45.348663936,
+        "95.0": 53.49851475,
+        "99.0": 53.49851475,
+        "99.9": 53.49851475,
+        "99.99": 53.49851475,
+        "99.999": 53.49851475,
+        "99.9999": 53.49851475,
+        "100.0": 53.49851475
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          23.139854725, 30.309979883333334, 31.91945541666667, 39.91543006,
+          12.869062242857144
+        ],
+        [
+          30.120358857142858, 24.170468, 21.455177377777776, 25.8392996,
+          15.005577366666667
+        ],
+        [
+          53.49851475, 15.285493091666666, 21.08141628, 18.46893039090909,
+          20.063234544444445
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMiningV2",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "16"
+    },
+    "primaryMetric": {
+      "score": 26.73367565390383,
+      "scoreError": 8.322465291456654,
+      "scoreConfidence": [18.41121036244718, 35.05614094536048],
+      "scorePercentiles": {
+        "0.0": 10.84224474117647,
+        "50.0": 28.053929457142857,
+        "90.0": 37.03961412095238,
+        "95.0": 38.92268946666667,
+        "99.0": 38.92268946666667,
+        "99.9": 38.92268946666667,
+        "99.99": 38.92268946666667,
+        "99.999": 38.92268946666667,
+        "99.9999": 38.92268946666667,
+        "100.0": 38.92268946666667
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          22.72931715, 18.8760024, 28.396953671428573, 30.2837666,
+          31.741723183333335
+        ],
+        [
+          31.07524145714286, 28.053929457142857, 35.3379729, 27.903942042857143,
+          38.92268946666667
+        ],
+        [
+          18.51504409, 17.808424391666666, 10.84224474117647, 24.7336527,
+          35.784230557142855
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.javaAPIMultiThreadMiningV2",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "params": {
+      "numOfThreads": "32"
+    },
+    "primaryMetric": {
+      "score": 28.68780533972703,
+      "scoreError": 13.058712349120869,
+      "scoreConfidence": [15.629092990606162, 41.7465176888479],
+      "scorePercentiles": {
+        "0.0": 15.280810275,
+        "50.0": 27.833512071428572,
+        "90.0": 48.55186913400001,
+        "95.0": 63.811842225,
+        "99.0": 63.811842225,
+        "99.9": 63.811842225,
+        "99.99": 63.811842225,
+        "99.999": 63.811842225,
+        "99.9999": 63.811842225,
+        "100.0": 63.811842225
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [
+          15.280810275, 18.36030696, 38.37855374, 26.470259642857144,
+          33.42751668333333
+        ],
+        [
+          27.833512071428572, 63.811842225, 16.626010581818182, 33.0100069375,
+          21.708468044444444
+        ],
+        [
+          18.347412075, 35.361536442857144, 29.764878477777778,
+          20.201334855555555, 31.734631083333333
+        ]
+      ]
+    },
+    "secondaryMetrics": {}
+  },
+  {
+    "jmhVersion": "1.37",
+    "benchmark": "com.lykourgoss.blockchainapi.benchmarking.MinerBenchmark.singleThreadMining",
+    "mode": "avgt",
+    "threads": 1,
+    "forks": 3,
+    "jvm": "[path-to-jdks]\\openjdk-21.0.2\\bin\\java.exe",
+    "jvmArgs": [
+      "-javaagent:C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.1\\lib\\idea_rt.jar=52997",
+      "-Dfile.encoding=UTF-8",
+      "-Dsun.stdout.encoding=UTF-8",
+      "-Dsun.stderr.encoding=UTF-8"
+    ],
+    "jdkVersion": "21.0.2",
+    "vmName": "OpenJDK 64-Bit Server VM",
+    "vmVersion": "21.0.2+13-58",
+    "warmupIterations": 3,
+    "warmupTime": "90 s",
+    "warmupBatchSize": 1,
+    "measurementIterations": 5,
+    "measurementTime": "3 min",
+    "measurementBatchSize": 1,
+    "primaryMetric": {
+      "score": 50.693463200936506,
+      "scoreError": 20.884883302225614,
+      "scoreConfidence": [29.808579898710892, 71.57834650316212],
+      "scorePercentiles": {
+        "0.0": 19.90582094,
+        "50.0": 47.18733425,
+        "90.0": 86.56311150500001,
+        "95.0": 97.28559065,
+        "99.0": 97.28559065,
+        "99.9": 97.28559065,
+        "99.99": 97.28559065,
+        "99.999": 97.28559065,
+        "99.9999": 97.28559065,
+        "100.0": 97.28559065
+      },
+      "scoreUnit": "s/op",
+      "rawData": [
+        [59.2506891, 79.414792075, 49.30014685, 46.956683675, 46.3842523],
+        [
+          31.775064942857142, 58.636782525, 47.18733425, 28.30744914285714,
+          64.12405398
+        ],
+        [19.90582094, 45.53723725, 47.47192925, 97.28559065, 38.86412108333333]
+      ]
+    },
+    "secondaryMetrics": {}
+  }
+]
