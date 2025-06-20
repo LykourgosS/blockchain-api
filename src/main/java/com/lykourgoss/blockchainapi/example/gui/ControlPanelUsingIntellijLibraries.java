@@ -11,7 +11,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ControlPanel extends JFrame {
+public class ControlPanelUsingIntellijLibraries extends JFrame {
     private final BlockService service;
     private JPanel mainPanel;
     private JTextField textFieldCode;
@@ -31,7 +31,7 @@ public class ControlPanel extends JFrame {
 
     private final List<Product> productsToAdd;
 
-    public ControlPanel() {
+    public ControlPanelUsingIntellijLibraries() {
         this.service = ApplicationContextHelper.getBean(BlockService.class);
         productsToAdd = new ArrayList<>();
     }
@@ -155,5 +155,4 @@ public class ControlPanel extends JFrame {
             fetchAll();
         }
     }
-
 }
