@@ -5,7 +5,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
-public class ExecutorServiceHelper {
+public final class ExecutorServiceHelper {
     /**
      * Cancels all given futures with an interrupt request.
      *

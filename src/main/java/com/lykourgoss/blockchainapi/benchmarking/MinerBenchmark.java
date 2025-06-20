@@ -12,13 +12,13 @@ import java.util.concurrent.TimeUnit;
 public class MinerBenchmark {
     public static void main(String[] args) throws Exception {
         BenchmarkRunnerSettings settings = new BenchmarkRunnerSettings(
-                1,
-                1,
-                1,
-                1,
-                TimeUnit.MINUTES,
                 3,
                 1,
+                3,
+                90,
+                TimeUnit.SECONDS,
+                5,
+                3,
                 TimeUnit.MINUTES
         );
         settings.calculateBenchmarkLastingTimeInMinutes();
