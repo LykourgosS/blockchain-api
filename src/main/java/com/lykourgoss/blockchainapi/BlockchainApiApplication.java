@@ -24,8 +24,8 @@ public class BlockchainApiApplication {
         return args -> {
             // Ensure Swing components are created on the EDT
             SwingUtilities.invokeLater(() -> {
-                ControlPanel form = new ControlPanel();
-                form.start();
+                ControlPanel panel = new ControlPanel();
+                panel.start();
             });
         };
     }
