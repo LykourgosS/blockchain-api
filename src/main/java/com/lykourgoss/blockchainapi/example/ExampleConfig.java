@@ -6,14 +6,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class ExampleConfig {
+public class ExampleConfig implements BlockchainConfig<Product> {
     @Bean
-    public JsonSerializer serializer(){
+    @Override
+    public JsonSerializer serializer() {
         return new JsonSerializer(Product.class);
     }
 
     @Bean
-    public GenericSampler<Product> productSampler(){
+    @Override
+    public GenericSampler<Product> sampler() {
         return new GenericSampler<>(Product.class);
     }
 }
