@@ -1,6 +1,6 @@
-package com.lykourgoss.blockchainapi.reflection;
+package com.lykourgoss.blockchainapi.core.helpers.reflection;
 
-import com.lykourgoss.blockchainapi.reflection.helpers.ObjectHelper;
+import com.lykourgoss.blockchainapi.core.helpers.ObjectHelper;
 
 import java.lang.reflect.Field;
 import java.util.*;

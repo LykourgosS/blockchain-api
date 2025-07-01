@@ -1,6 +1,4 @@
-package com.lykourgoss.blockchainapi.reflection;
-
-import com.lykourgoss.blockchainapi.reflection.FieldGetter;
+package com.lykourgoss.blockchainapi.core.helpers.reflection;
 
 import java.util.ArrayList;
 import java.util.List;

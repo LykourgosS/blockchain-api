@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.reflection;
+package com.lykourgoss.blockchainapi.core.helpers.reflection;
 
 public interface TypeIdentifier<T> {
     boolean isNumber(T t);

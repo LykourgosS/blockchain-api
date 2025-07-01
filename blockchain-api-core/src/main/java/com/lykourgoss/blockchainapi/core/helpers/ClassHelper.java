@@ -1,7 +1,7 @@
-package com.lykourgoss.blockchainapi.reflection.helpers;
+package com.lykourgoss.blockchainapi.core.helpers;
 
 import com.google.gson.reflect.TypeToken;
-import com.lykourgoss.blockchainapi.reflection.TypeIdentifier;
+import com.lykourgoss.blockchainapi.core.helpers.reflection.TypeIdentifier;
 
 import java.lang.reflect.Type;
 
