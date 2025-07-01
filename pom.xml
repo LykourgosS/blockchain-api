@@ -25,6 +25,7 @@
         <module>blockchain-api-core</module>
         <module>blockchain-api-benchmarking</module>
         <module>blockchain-api-example</module>
+        <module>blockchain-api-persistence</module>
     </modules>
     <scm>
         <connection/>

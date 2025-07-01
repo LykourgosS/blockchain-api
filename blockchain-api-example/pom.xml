@@ -18,6 +18,11 @@
             <artifactId>blockchain-api-core</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.lykourgoss.blockchainapi</groupId>
+            <artifactId>blockchain-api-persistence</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>

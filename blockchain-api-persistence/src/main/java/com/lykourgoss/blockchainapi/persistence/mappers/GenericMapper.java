@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.core.mappers;
+package com.lykourgoss.blockchainapi.persistence.mappers;
 
 import org.mapstruct.MappingTarget;
 

@@ -1,10 +1,10 @@
-package com.lykourgoss.blockchainapi.core.mappers;
+package com.lykourgoss.blockchainapi.persistence.mappers;
 
 import com.lykourgoss.blockchainapi.core.Block;
 import com.lykourgoss.blockchainapi.persistence.BlockDto;
 import com.lykourgoss.blockchainapi.core.helpers.serializer.JsonSerializer;
-import com.lykourgoss.blockchainapi.core.mappers.custom.DataToStringDataMapper;
-import com.lykourgoss.blockchainapi.core.mappers.custom.StringDataToDataMapper;
+import com.lykourgoss.blockchainapi.persistence.mappers.custom.DataToStringDataMapper;
+import com.lykourgoss.blockchainapi.persistence.mappers.custom.StringDataToDataMapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingConstants;

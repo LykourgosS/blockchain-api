@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.core.mappers.custom;
+package com.lykourgoss.blockchainapi.persistence.mappers.custom;
 
 import org.mapstruct.Qualifier;
 
@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Qualifier
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.CLASS)
-public @interface DataToStringDataMapper {
+public @interface StringDataToDataMapper {
 }

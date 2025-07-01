@@ -1,9 +1,9 @@
 package com.lykourgoss.blockchainapi.persistence;
 
 import com.lykourgoss.blockchainapi.core.Block;
-import com.lykourgoss.blockchainapi.reflection.Comparator;
+import com.lykourgoss.blockchainapi.core.helpers.reflection.Comparator;
 import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
-import com.lykourgoss.blockchainapi.core.mappers.BlockMapper;
+import com.lykourgoss.blockchainapi.persistence.mappers.BlockMapper;
 import com.lykourgoss.blockchainapi.core.miners.interfaces.Miner;
 import com.lykourgoss.blockchainapi.core.validators.Validator;
 import org.springframework.stereotype.Service;
