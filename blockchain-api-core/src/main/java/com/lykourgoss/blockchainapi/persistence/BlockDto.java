@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi.core;
+package com.lykourgoss.blockchainapi.persistence;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

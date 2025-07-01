@@ -1,4 +1,4 @@
-package com.lykourgoss.blockchainapi;
+package com.lykourgoss.blockchainapi.example;
 
 import com.lykourgoss.blockchainapi.example.gui.ControlPanel;
 import org.springframework.boot.CommandLineRunner;

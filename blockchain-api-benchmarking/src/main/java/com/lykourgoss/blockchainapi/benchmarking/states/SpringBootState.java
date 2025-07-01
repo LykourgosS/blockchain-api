@@ -1,8 +1,8 @@
 package com.lykourgoss.blockchainapi.benchmarking.states;
 
 import ch.qos.logback.classic.Logger;
-import com.lykourgoss.blockchainapi.BlockchainApiApplication;
 import com.lykourgoss.blockchainapi.benchmarking.sampler.GenericSampler;
+import com.lykourgoss.blockchainapi.example.BlockchainApiApplication;
 import com.lykourgoss.blockchainapi.persistence.BlockService;
 import lombok.Getter;
 import lombok.Setter;
