@@ -15,12 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lykourgoss.blockchainapi</groupId>
-            <artifactId>blockchain-api-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.lykourgoss.blockchainapi</groupId>
-            <artifactId>blockchain-api-persistence</artifactId>
+            <artifactId>blockchain-api-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
