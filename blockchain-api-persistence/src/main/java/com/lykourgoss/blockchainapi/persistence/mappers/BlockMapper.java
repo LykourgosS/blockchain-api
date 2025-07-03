@@ -1,8 +1,8 @@
 package com.lykourgoss.blockchainapi.persistence.mappers;
 
 import com.lykourgoss.blockchainapi.core.Block;
-import com.lykourgoss.blockchainapi.persistence.BlockDto;
 import com.lykourgoss.blockchainapi.core.helpers.serializer.JsonSerializer;
+import com.lykourgoss.blockchainapi.persistence.BlockDto;
 import com.lykourgoss.blockchainapi.persistence.mappers.custom.DataToStringDataMapper;
 import com.lykourgoss.blockchainapi.persistence.mappers.custom.StringDataToDataMapper;
 import org.mapstruct.Mapper;

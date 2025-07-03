@@ -10,6 +10,7 @@
     </parent>
 
     <artifactId>blockchain-api-persistence</artifactId>
+    <packaging>jar</packaging>
 
     <properties>
         <org.mapstruct.version>1.6.0.Beta1</org.mapstruct.version>

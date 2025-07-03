@@ -2,9 +2,9 @@ package com.lykourgoss.blockchainapi.example.gui;
 
 import com.lykourgoss.blockchainapi.core.helpers.ApplicationContextHelper;
 import com.lykourgoss.blockchainapi.core.helpers.jsonizer.GsonJsonizer;
+import com.lykourgoss.blockchainapi.core.helpers.reflection.FieldGetter;
 import com.lykourgoss.blockchainapi.example.Product;
 import com.lykourgoss.blockchainapi.persistence.BlockService;
-import com.lykourgoss.blockchainapi.core.helpers.reflection.FieldGetter;
 
 import javax.swing.*;
 import java.awt.*;

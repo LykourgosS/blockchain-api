@@ -1,11 +1,9 @@
 package com.lykourgoss.blockchainapi.core;
 
-import com.lykourgoss.blockchainapi.core.miners.*;
+import com.lykourgoss.blockchainapi.core.miners.MinerFactory;
 import com.lykourgoss.blockchainapi.core.miners.interfaces.Miner;
 import com.lykourgoss.blockchainapi.core.validators.Validator;
 import jakarta.annotation.PostConstruct;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
