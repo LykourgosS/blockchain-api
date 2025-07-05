@@ -1,1 +1,2 @@
-com.lykourgoss.blockchainapi.starter.StarterConfig
+com.lykourgoss.blockchainapi.core.CoreConfig
+com.lykourgoss.blockchainapi.persistence.PersistenceConfig
