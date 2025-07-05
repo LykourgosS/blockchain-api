@@ -13,7 +13,7 @@ public class BlockState {
     private Block block;
 
     @Setup(Level.Invocation)
-    public void setupBlock(SpringBootState state){
+    public void setupBlock(MinerSettingsState state){
         if (block != null){
             state.setPreviousHash(block.getHash());
         }
