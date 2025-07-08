@@ -32,8 +32,15 @@ class CustomMultiThreadMiner extends AbstractMultiThreadMiner {
     protected void assignJobToThreads(Block block, int start, int end) {
         Thread thread = new Thread(() -> threadPartialMining(block, start, end));
         thread.setName("MinerThread-" + thread.threadId());
-        thread.start();
         threads.add(thread);
+    }
+
+    @Override
+    protected void createAndStartThreads(Block block) {
+        super.createAndStartThreads(block);
+        for (Thread thread : threads) {
+            thread.start();
+        }
     }
 
     @Override

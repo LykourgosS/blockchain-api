@@ -46,7 +46,7 @@ abstract class AbstractMultiThreadMiner implements MultiThreadMiner {
         }
     }
 
-    private void createAndStartThreads(Block block) {
+    protected void createAndStartThreads(Block block) {
         configureThreadCollection();
         int chunkSize = Integer.MAX_VALUE / numOfThreads;
         for (int i = 0; i < numOfThreads; i++) {
